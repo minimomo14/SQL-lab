@@ -1,0 +1,33 @@
+SQL LAB
+-- select * from customers;
+-- select * from customer_demographics;
+-- SELECT DISTINCT Country FROM Customers;
+-- select country from customers where country='USA'
+-- select * from customers where customer_id like 'BL%';
+-- select first 100 records of the orders table
+-- select * from customers limit 100;
+-- select * from customers where postal_code in ('1010','3012','12209','05023');
+--6. select * from orders where ship_region != 'null';
+
+--7.select * from customers order by country,city;
+--8.insert into customers (customer_id, company_name,contact_name, contact_title,address,city,region,postal_code,country,phone,fax) values('ABCD','SQL Okay','CEO',,)
+--9.update orders set ship_region='EuroZone' where ship_country=('France');
+-- select * from orders;
+-- select * from order_details;
+-- Delete from order_details where quantity=1;
+-- select avg(quantity),max(quantity),min(quantity) from order_details;
+-- select avg(quantity),max(quantity),min(quantity) from order_details group by order_id;
+-- 13.Find the customer_id that placed order 10290 (orders table)
+-- select customer_id from orders where order_id = 10290;
+-- 14. Do an inner join, left join, right join on orders and customers tables.  (These are three separate queries, one for each type of join.)
+-- select * from customers inner join orders on customers.customer_id = orders.customer_id;
+-- select * from customers left join orders on customers.customer_id = orders.customer_id;
+-- select * from customers right join orders on customers.customer_id = orders.customer_id;
+
+-- select * from customers inner join orders on orders.customer_id = customers.customer_id;
+-- select * from customers left join orders on orders.customer_id = customers.customer_id;
+-- select * from customers right join orders on orders.customer_id = customers.customer_id;
+
+-- 15.Use a join to get the ship_city and ship_country of all the orders 
+-- which are associated with an employee who is in London.
+select orders.ship_city, orders.ship_country from orders inner join employees on employees.city = orders.ship_city;
